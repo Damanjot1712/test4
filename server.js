@@ -25,16 +25,7 @@ function onHttpStart()
 }
 
 app.get("/",(req,res)=>{
-    let resText = `<ul>
-                <li> <a href = "/CPA"> CPA Students </a></li>
-                <li> <a href = "/allStudents"> All Students </a></li>
-                <li> <a href = "/addStudent"> Add A New Student </a></li>
-                <li> Note: Locate specific student by student Id, e.g., <br>
-                 http://localhost:8080/student/3 </li>
-                <li> <a href = "/highGPA"> Highest GPA </a></li>
-                <li> <a href = "/"> Home </a></li>
-                `
-    resText = "<h2>Declaration (text size in heading 2): </h2> ";
+    let resText = "<h2>Declaration (text size in heading 2): </h2> ";
     resText += "<p> The rest text is displayed in paragraph as shown in screenshot. </p>";
     resText += " <p> I acknowledge the College’s academic integrity policy – and my own integrity ";
     resText += "– remain in effect whether my work is done remotely or onsite.";
@@ -44,7 +35,15 @@ app.get("/",(req,res)=>{
     resText += "<p>Name: <mark> <b> Damanjot Singh </b> </mark> </p>";
     resText += "<p>Student Number: <mark><b> 148285216 </b> </mark> </p>";
     
-    
+    resText += `<ul>
+                <li> <a href = "/CPA"> CPA Students </a></li>
+                <li> <a href = "/allStudents"> All Students </a></li>
+                <li> <a href = "/addStudent"> Add A New Student </a></li>
+                <li> Note: Locate specific student by student Id, e.g., <br>
+                 http://localhost:8080/student/3 </li>
+                <li> <a href = "/highGPA"> Highest GPA </a></li>
+                <li> <a href = "/"> Home </a></li>
+                `
 
     res.send(resText);
 });
