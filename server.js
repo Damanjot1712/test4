@@ -14,6 +14,7 @@ var express = require("express");
 var app = express();
 var data_prep = require("./data_prep.js");
 var path = require("path");
+var exphbs = require('express-handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -25,7 +26,7 @@ function onHttpStart()
 }
 
 app.get("/",(req,res)=>{
-    let resText = "<h2>Declaration (text size in heading 2): </h2> ";
+    let resText = "<h2>Student Honour Pledge</h2> ";
     resText += "<p> The rest text is displayed in paragraph as shown in screenshot. </p>";
     resText += " <p> I acknowledge the College’s academic integrity policy – and my own integrity ";
     resText += "– remain in effect whether my work is done remotely or onsite.";
